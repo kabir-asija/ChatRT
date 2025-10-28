@@ -8,7 +8,7 @@ const App = () => {
   const generateAnswer = async () => {
     setAnswer("Loading...");
     try {
-      const response = await axios.post("http://localhost:2000/generate", {
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/generate`, { question}, {
         question,
       });
       setAnswer(response.data.answer);
